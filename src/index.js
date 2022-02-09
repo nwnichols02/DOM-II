@@ -7,7 +7,9 @@ const allText = document.querySelectorAll('*');
 const headerTitle = document.querySelector('h1');
 const title = document.querySelector('.intro h2');
 const input = document.querySelector('input');
-const letsGoTitle = document.querySelector('h2.text-content')
+const letsGoTitle = document.querySelector('.text-content')
+const destinationTitle = document.querySelector('.content-destination h2')
+
 
 // Mouseover and Mouseout
 
@@ -45,4 +47,14 @@ window.addEventListener('load', (evt) => {
     onLoad();
 })
 
+//click
 
+function colorWords(evt) {
+    evt.target.style.color = 'orange';
+}
+
+letsGoTitle.addEventListener('click', colorWords)
+headerTitle.addEventListener('click', colorWords);
+destinationTitle.addEventListener('click', colorWords)
+
+// function 
