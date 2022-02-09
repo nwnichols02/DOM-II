@@ -7,7 +7,7 @@ const allText = document.querySelectorAll('*');
 const headerTitle = document.querySelector('h1');
 const title = document.querySelector('.intro h2');
 const input = document.querySelector('input');
-
+const letsGoTitle = document.querySelector('h2.text-content')
 
 // Mouseover and Mouseout
 
@@ -16,12 +16,13 @@ homeLink.forEach(link => {
         evt.target.style.color = 'red';
         link.addEventListener('mouseout', function(evt){
             evt.target.style.color = 'black';
+            evt.preventDefault();
         })
     })
 })
 
 //Keydown
-function escKey(evt) {
+function pressKey(evt) {
     if(evt.key === 'a') {
         firstPicture.src = 'https://images.unsplash.com/photo-1594767059028-57f64cd78eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
         headerTitle.textContent = 'Fun Europe Bus'
@@ -33,7 +34,7 @@ function escKey(evt) {
     }
 }
 
-document.addEventListener('keydown', escKey)
+document.addEventListener('keydown', pressKey)
 
 //On Load
 function onLoad(){
@@ -45,34 +46,3 @@ window.addEventListener('load', (evt) => {
 })
 
 
-//Scroll
-// let last_known_scroll_position = 0;
-// let ticking = false;
-
-// function onScroll() {
-//     update();
-// }
-
-// function update() {
-//     for(let i = 0; i< allText.length; i++){
-
-//     }
-// }
-
-// window.addEventListener('scroll', function(evt){
-//     last_known_scroll_position = window.scrollY;
-//         if(!ticking){
-//             window.requestAnimationFrame(function(){
-//                 onscroll(last_known_scroll_position);
-//                 ticking = false;
-//             });
-//             ticking = true;
-//         }
-// })
-
-//Select
-function inputSelection(evt){
-    const selection = evt.target.value.substring(evt.target.selectionStart, evt.target.selectionEnd);
-}
-
-input.addEventListener('select', inputSelection)
